@@ -88,31 +88,184 @@ function compareChoice(playerGuess, cpuGuess) {
     } else if (playerGuess == "scissors" && cpuGuess == "scissors") {
         return("Tie - Player and CPU chose Scissors.")
     } else {
-        return("Invalid input, sir. We prefer doing things our own way around here.")
+        return("Invalid input.")
     }
 
 
 }
 
-// fourth function to "play" the game ( 5 rounds )
+// to refer to the result div, so that the result can be appended onto page.
 
-function playGame() {
 
-    for (i = 0; i < 5; i++) {
-        computerChoice();
-        playerChoice();
-        console.log(compareChoice(playerGuess, cpuGuess));
+const resultDiv = document.getElementById('result');
+
+const rockButton = document.getElementById('rock');
+
+const playerScoreDiv = document.getElementById('playerScore');
+
+const cpuScoreDiv = document.getElementById('cpuScore');
+
+rockButton.addEventListener('click', selectRock);
+
+
+function selectRock() {
+
+    computerChoice();
+
+    playerGuess = 'rock';
+    resultDiv.textContent = compareChoice(playerGuess, cpuGuess);
+    playerScoreDiv.textContent = ("Player score: " + playerScore);
+    cpuScoreDiv.textContent = ("CPU Score: " + cpuScore);
+
+    finalGameResult();
+
+}
+
+
+
+
+const paperButton = document.getElementById('paper');
+paperButton.addEventListener('click', selectPaper);
+
+
+
+function selectPaper() {
+
+    computerChoice();
+
+    playerGuess = 'paper';
+    resultDiv.textContent = compareChoice(playerGuess, cpuGuess);
+    playerScoreDiv.textContent = ("Player score: " + playerScore);
+    cpuScoreDiv.textContent = ("CPU Score: " + cpuScore);
+
+    finalGameResult();
+
+
+}
+
+
+
+
+const scissorsButton = document.getElementById('scissors');
+scissorsButton.addEventListener('click', selectScissors);
+
+
+
+
+function selectScissors() {
+
+    computerChoice();
+
+    playerGuess = 'scissors';
+    resultDiv.textContent = compareChoice(playerGuess, cpuGuess);
+    playerScoreDiv.textContent = ("Player score: " + playerScore);
+    cpuScoreDiv.textContent = ("CPU Score: " + cpuScore);
+
+    finalGameResult();
+}
+
+
+
+
+// this will be the code to display the result.
+
+
+
+
+
+const finalresultDiv = document.getElementById('finalResult');
+const ehrmantrautPic = document.getElementById('ehrmantraut');
+
+function finalGameResult() {
+
+    if (playerScore === 5) {
+        finalresultDiv.style.visibility = 'visible';
+        resetButton.style.visibility = 'visible';
+        rockButton.removeEventListener('click', selectRock);
+        paperButton.removeEventListener('click', selectPaper);
+        scissorsButton.removeEventListener('click', selectScissors);
+        document.getElementById('finalResult').textContent = ("The player has won!");
+    } else if (cpuScore === 5) {
+        finalresultDiv.style.visibility = 'visible';
+        resetButton.style.visibility = 'visible';
+        rockButton.removeEventListener('click', selectRock);
+        paperButton.removeEventListener('click', selectPaper);
+        scissorsButton.removeEventListener('click', selectScissors);
+        document.getElementById('finalResult').textContent = ("You ain't really won nothing.");
+        ehrmantrautPic.style.visibility = 'visible';
     }
+
+
+
+}
+
+
+const resetDiv = document.getElementById('reset');
+const resetButton = document.getElementById('reset');
+
+resetButton.setAttribute('id', 'playAgain');
+
+resetButton.textContent = 'Play the game again.';
+
+resetButton.addEventListener('click', resetGame);
+
+
+
+
+function resetGame() {
+
+    playerScore = 0;
+    cpuScore = 0;
+
+    rockButton.addEventListener('click', selectRock);
+    paperButton.addEventListener('click', selectPaper);
+    scissorsButton.addEventListener('click', selectScissors);
     
-    if (playerScore > cpuScore) {
-        console.log("Player wins the game.")
-    } else if (cpuScore > playerScore) {
-        console.log("CPU wins the game.")
-    } else {
-        console.log("Tie.")
-    }
+    resetButton.addEventListener('click', resetGame);
+
+
+    document.getElementById('resetButton');
+    document.getElementById('playerScore').textContent = ("Player score: " + playerScore);
+    document.getElementById('cpuScore').textContent = ("CPU Score: " + cpuScore);
+    document.getElementById('result').textContent = ("Game is reset.");
+
+    resetDiv.style.visibility = 'hidden';
+
+    ehrmantrautPic.style.visibility = 'hidden';
+    finalresultDiv.style.visibility = 'hidden';
 
 
 }
 
-playGame();
+
+
+
+// TO DO: Fix the UI, fix the 'play the game again button for reset logic so that it keeps reappearing.
+// EHrmantraut visibility has been fixed.
+
+// this code is currently no longer needed. This was important to logging events and conditional logic within the console, but the game has now been updated into the UI.
+
+// fourth function to "play" the game ( 5 rounds ), leave this for now.
+
+// function playGame() {
+//
+//    for (i = 0; i < 5; i++) {
+//        computerChoice();
+//        playerChoice();
+//        console.log(compareChoice(playerGuess, cpuGuess));
+//    }
+//    
+//    if (playerScore > cpuScore) {
+//        console.log("Player wins the game.")
+//    } else if (cpuScore > playerScore) {
+//        console.log("CPU wins the game.")
+//    } else {
+//        console.log("Tie.")
+//    }
+
+
+// }
+
+// playGame();
+
+
