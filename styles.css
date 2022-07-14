@@ -31,7 +31,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: antiquewhite;
+    background-color: rgb(226, 222, 217);
 
 }
 
@@ -46,10 +46,13 @@ body {
 .buttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: space;
     padding: 2vh;
     max-height: 3vh;
+margin-bottom: 5vh;
+    
+    
 
 
 
@@ -57,29 +60,37 @@ body {
 
 button {
 display: flex;
-justify-content: space-between;
+justify-content: space-evenly;
 flex-direction: row;
 align-items: center;
-background-color: rgb(64, 64, 99);
+background-color: rgb(122, 122, 172);
 border: 1px solid;
 font-size: 18px;
 font-family: Arial;
 color: white;
-margin-right: 3vh;
 border-radius: 10px;
 padding: 10px;
+margin-right: 5vh;
+margin-left: 5vh;
+height: 6vh;
+width: 14vh;
+text-align: center;
+justify-content: center;
+font-size: 22px;
+font-weight: 800;
+text-shadow: 1px 1px black;
 }
 
 button:hover {
-    color: rgb(84, 110, 60);
-    transform: scale(1.2);
+    color: rgba(116, 136, 97, 0.863);
+    transform: scale(1.1);
     transition: 0.2s ease-in-out;
 }
 
 
 
 button:active {
-    background-color: rgb(131, 185, 185);
+    background-color: rgb(136, 189, 189);
     box-shadow: 0 5px rgb(0, 0, 0);
     transform: translateY(5px);
 }
@@ -90,33 +101,34 @@ button:active {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    padding: 2vh;
+    padding: 1vh;
+    margin-top: 2vh;
 
 }
 
 .ehrmantraut {
 
-visibility: hidden;
-max-height: 40vh;
-max-width: 40vh;
-margin-right: auto;
-margin-left: auto;
-border-radius: 25px;
-display: flex;
-justify-content: center;
-align-items: center;
+    visibility: hidden;
+    max-height: 40vh;
+    max-width: 40vh;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-}
+ }
 
 
 .scorediv {
     display: flex;
     flex-direction: row;
-    padding: 2vh;
+    padding: 10vh;
     
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 5vh;
     padding: 10vh;
@@ -138,8 +150,11 @@ align-items: center;
 
 .finalResult {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
 }
 
 

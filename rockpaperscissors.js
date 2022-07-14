@@ -114,7 +114,7 @@ function selectRock() {
 
     playerGuess = 'rock';
     resultDiv.textContent = compareChoice(playerGuess, cpuGuess);
-    playerScoreDiv.textContent = ("Player score: " + playerScore);
+    playerScoreDiv.textContent = ("Player Score: " + playerScore);
     cpuScoreDiv.textContent = ("CPU Score: " + cpuScore);
 
     finalGameResult();
@@ -135,7 +135,7 @@ function selectPaper() {
 
     playerGuess = 'paper';
     resultDiv.textContent = compareChoice(playerGuess, cpuGuess);
-    playerScoreDiv.textContent = ("Player score: " + playerScore);
+    playerScoreDiv.textContent = ("Player Score: " + playerScore);
     cpuScoreDiv.textContent = ("CPU Score: " + cpuScore);
 
     finalGameResult();
@@ -158,7 +158,7 @@ function selectScissors() {
 
     playerGuess = 'scissors';
     resultDiv.textContent = compareChoice(playerGuess, cpuGuess);
-    playerScoreDiv.textContent = ("Player score: " + playerScore);
+    playerScoreDiv.textContent = ("Player Score: " + playerScore);
     cpuScoreDiv.textContent = ("CPU Score: " + cpuScore);
 
     finalGameResult();
@@ -179,19 +179,24 @@ const ehrmantrautPic = document.getElementById('ehrmantraut');
 function finalGameResult() {
 
     if (playerScore === 5) {
+
         finalresultDiv.style.visibility = 'visible';
         resetButton.style.visibility = 'visible';
         rockButton.removeEventListener('click', selectRock);
         paperButton.removeEventListener('click', selectPaper);
         scissorsButton.removeEventListener('click', selectScissors);
         document.getElementById('finalResult').textContent = ("The player has won!");
+    
     } else if (cpuScore === 5) {
+
         finalresultDiv.style.visibility = 'visible';
         resetButton.style.visibility = 'visible';
         rockButton.removeEventListener('click', selectRock);
         paperButton.removeEventListener('click', selectPaper);
         scissorsButton.removeEventListener('click', selectScissors);
-        document.getElementById('finalResult').textContent = ("You ain't really won nothing.");
+
+        document.getElementById('finalResult').textContent = ("You have lost.");
+
         ehrmantrautPic.style.visibility = 'visible';
     }
 
@@ -205,7 +210,7 @@ const resetButton = document.getElementById('reset');
 
 resetButton.setAttribute('id', 'playAgain');
 
-resetButton.textContent = 'Play the game again.';
+resetButton.textContent = 'Reset';
 
 resetButton.addEventListener('click', resetGame);
 
@@ -225,9 +230,9 @@ function resetGame() {
 
 
     document.getElementById('resetButton');
-    document.getElementById('playerScore').textContent = ("Player score: " + playerScore);
+    document.getElementById('playerScore').textContent = ("Player Score: " + playerScore);
     document.getElementById('cpuScore').textContent = ("CPU Score: " + cpuScore);
-    document.getElementById('result').textContent = ("Game is reset.");
+    document.getElementById('result').textContent = ("Game has been reset! Play again.");
 
     resetDiv.style.visibility = 'hidden';
 
@@ -240,8 +245,7 @@ function resetGame() {
 
 
 
-// TO DO: Fix the UI, fix the 'play the game again button for reset logic so that it keeps reappearing.
-// EHrmantraut visibility has been fixed.
+// 
 
 // this code is currently no longer needed. This was important to logging events and conditional logic within the console, but the game has now been updated into the UI.
 
