@@ -195,7 +195,7 @@ function finalGameResult() {
         paperButton.removeEventListener('click', selectPaper);
         scissorsButton.removeEventListener('click', selectScissors);
 
-        document.getElementById('finalResult').textContent = ("You have lost.");
+        document.getElementById('finalResult').textContent = ("You are done.");
 
         ehrmantrautPic.style.visibility = 'visible';
     }

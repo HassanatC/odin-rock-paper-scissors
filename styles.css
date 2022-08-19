@@ -31,7 +31,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: rgb(226, 222, 217);
+    background-color: rgb(235, 224, 212);
 
 }
 
@@ -49,8 +49,8 @@ body {
     justify-content: space-between;
     align-items: space;
     padding: 2vh;
-    max-height: 3vh;
-margin-bottom: 5vh;
+    max-height: 2vh;
+    margin-bottom: 5vh;
     
     
 
@@ -63,7 +63,7 @@ display: flex;
 justify-content: space-evenly;
 flex-direction: row;
 align-items: center;
-background-color: rgb(122, 122, 172);
+background-color: rgb(109, 109, 134);
 border: 1px solid;
 font-size: 18px;
 font-family: Arial;
@@ -82,17 +82,19 @@ text-shadow: 1px 1px black;
 }
 
 button:hover {
-    color: rgba(116, 136, 97, 0.863);
+    color: rgba(175, 182, 167, 0.863);
     transform: scale(1.1);
-    transition: 0.2s ease-in-out;
+    transition: 0.15s ease-in-out;
 }
 
 
 
 button:active {
-    background-color: rgb(136, 189, 189);
-    box-shadow: 0 5px rgb(0, 0, 0);
-    transform: translateY(5px);
+    background-color: rgb(75, 97, 109);
+    box-shadow: 2px 4px 1px rgb(0, 0, 0);
+    transform: translateY(3px);
+    color: white;
+    
 }
 
 
