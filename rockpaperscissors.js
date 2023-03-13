@@ -244,32 +244,3 @@ function resetGame() {
 
 
 
-
-// 
-
-// this code is currently no longer needed. This was important to logging events and conditional logic within the console, but the game has now been updated into the UI.
-
-// fourth function to "play" the game ( 5 rounds ), leave this for now.
-
-// function playGame() {
-//
-//    for (i = 0; i < 5; i++) {
-//        computerChoice();
-//        playerChoice();
-//        console.log(compareChoice(playerGuess, cpuGuess));
-//    }
-//    
-//    if (playerScore > cpuScore) {
-//        console.log("Player wins the game.")
-//    } else if (cpuScore > playerScore) {
-//        console.log("CPU wins the game.")
-//    } else {
-//        console.log("Tie.")
-//    }
-
-
-// }
-
-// playGame();
-
-
